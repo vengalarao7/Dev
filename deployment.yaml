@@ -16,7 +16,7 @@ spec:
   spec:
    containers:
    - name: myapp
-     image: vengalarao7/my-own-httpd:1.2
+     image: vengalarao7/devops:tagversion
      ports:
      - containerPort: 80
 
