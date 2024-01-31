@@ -8,16 +8,14 @@ pipeline {
         }
 
     stages {
-           
             stage('Build Docker Image') {
                     steps {
-                            sh 'whoami'
                             script {
-                                    myimage = docker.build("vengalarao7/dev:${env.BUILD_ID}")
+                                    sh "docker build -t vengalarao7/dev:${env.BUILD_ID} ."
                             }
                     }
             }
-
+        
             stage("Push Docker Image") {
                     steps {
                             script {
@@ -36,6 +34,6 @@ pipeline {
                                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
                             echo "Deployment Finished ..."
                     }
-            }
-      }
+             }
+       }
 }
