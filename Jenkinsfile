@@ -5,8 +5,8 @@ pipeline {
         // }
 
         environment {
-                PROJECT_ID = 'terraform-gcp-410710'
-                CLUSTER_NAME = 'cluster-3'
+                PROJECT_ID = 'office-412910'
+                CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'us-central1'
                 CREDENTIALS_ID = 'terraform'
         }
