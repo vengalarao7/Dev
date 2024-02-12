@@ -1,13 +1,29 @@
 pipeline {
     agent any
         environment {
-                PROJECT_ID = 'office-412910'
+                PROJECT_ID = 'sinuous-tuner-414107'
                 CLUSTER_NAME = 'cluster-1'
-                LOCATION = 'us-central1'
+                LOCATION = 'asia-southeast1'
                 CREDENTIALS_ID = 'terraform'
         }
 
     stages {
+
+            stage('terraform init') {
+                steps {
+                    script {
+                        sh "terraform init"
+                    }
+                }
+            }
+
+            stage('terraform apply') {
+                steps {
+                    script {
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
             stage('Build Docker Image') {
                     steps {
                             script {
