@@ -1,10 +1,10 @@
 pipeline {
     agent any
         environment {
-                PROJECT_ID = 'usecase1-413317'
+                PROJECT_ID = 'sinuous-tuner-414107'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'us-west1'
-                CREDENTIALS_ID = 'gke'
+                CREDENTIALS_ID = 'terraform'
         }
 
     stages {
