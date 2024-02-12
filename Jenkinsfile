@@ -3,7 +3,7 @@ pipeline {
         environment {
                 PROJECT_ID = 'sinuous-tuner-414107'
                 CLUSTER_NAME = 'cluster-1'
-                LOCATION = 'asia-southeast1'
+                LOCATION = 'us-west1'
                 CREDENTIALS_ID = 'terraform'
         }
 
